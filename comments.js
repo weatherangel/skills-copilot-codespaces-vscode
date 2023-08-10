@@ -1,17 +1,13 @@
-// create web server for comments using the commentController  
+// create nodejs web server for comments using the commentController using the express router to handle the routes for the comments api
+const express = require('express');
+const router = express.Router();
+const commentController = require('../controllers/commentController');
 
-
-var express = require('express');
-var router = express.Router();
-var commentController = require('../controllers/commentController.js');
-
-// create a route for getting all comments
-router.get('/', commentController.getComments);
-
-// create a route for posting a comment
-router.post('/', commentController.postComment);
-
-// create a route for deleting a comment
+// get all comments
+router.get('/', commentController.comment_list);
+router.get('/create', commentController.comment_create_get);
+router.post('/create', commentController.comment_create_post);
+// delete comment
 router.delete('/:id', commentController.deleteComment);
 
 module.exports = router;
