@@ -1,4 +1,4 @@
-// create web server for comments using the commentController using the express router to handle the routes for the comments api
+// Create web server for comments using the commentController using the express router to handle the routes for the comments api
 const express = require('express');
 const router = express.Router();
 const commentController = require('../controllers/commentController');
